@@ -121,10 +121,16 @@ find(Key,
             error
     end.
 
--spec is_key(Key :: key(),
+-spec is_key(Key :: keys() | key(),
              keys1value(key(), value())) ->
     boolean().
 
+is_key([_ | _] = Keys,
+       #keys1value{module = Module,
+                   lookup = Lookup}) ->
+    lists:any(fun(K) ->
+        Module:is_key(K, Lookup)
+    end, Keys);
 is_key(Key,
        #keys1value{module = Module,
                    lookup = Lookup})
