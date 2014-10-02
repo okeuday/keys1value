@@ -10,6 +10,7 @@ defmodule Keys1value.Mixfile do
   end
 
   defp deps do
+    []
   end
 
   defp description do
