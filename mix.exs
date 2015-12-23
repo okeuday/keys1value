@@ -3,7 +3,7 @@ defmodule Keys1value.Mixfile do
 
   def project do
     [app: :keys1value,
-     version: "1.5.0",
+     version: "1.5.1",
      language: :erlang,
      description: description,
      package: package,
@@ -20,7 +20,7 @@ defmodule Keys1value.Mixfile do
 
   defp package do
     [files: ~w(src doc rebar.config README.markdown),
-     contributors: ["Michael Truog"],
+     maintainers: ["Michael Truog"],
      licenses: ["BSD"],
      links: %{"GitHub" => "https://github.com/okeuday/keys1value"}]
    end
