@@ -3,7 +3,7 @@ defmodule Keys1value.Mixfile do
 
   def project do
     [app: :keys1value,
-     version: "1.5.1",
+     version: "1.5.2",
      language: :erlang,
      description: description,
      package: package,
