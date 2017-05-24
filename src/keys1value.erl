@@ -191,8 +191,8 @@ to_list([{_, {Keys, _} = Entry} | L0], Output) ->
 
 -compile({inline,
           [module_erase_f/1,
-           module_find/3,
            module_fetch/3,
+           module_find/3,
            module_is_key/3,
            module_new/1,
            module_store/4,
@@ -203,13 +203,13 @@ module_erase_f(maps) ->
 module_erase_f(Module) ->
     fun Module:erase/2.
 
-module_find(Module, Key, Lookup) ->
-    Module:find(Key, Lookup).
-
 module_fetch(maps, Key, Lookup) ->
     maps:get(Key, Lookup);
 module_fetch(Module, Key, Lookup) ->
     Module:fetch(Key, Lookup).
+
+module_find(Module, Key, Lookup) ->
+    Module:find(Key, Lookup).
 
 module_is_key(Module, Key, Lookup) ->
     Module:is_key(Key, Lookup).
